@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" stanPhotoshop	    PHSP/PHXS	20 (CEP 9)	21 (CEP 9)	22.0 (CEP 10)
+            InDesign	    IDSN	    14 (CEP 9)	15 (CEP 9)	16.0 (CEP 10 )
+            InCopy	        AICY	    14 (CEP 9)	15 (CEP 9)	16.0 (CEP 10 )
+            Illustrator	    ILST	    23 (CEP 9)	24 (CEP 9)	25.0 (CEP 10)
+            Premiere Pro	PPRO	    13 (CEP 9)	14 (CEP 9)	14.4 (CEP 10)
+            Prelude	        PRLD	    8 (CEP 9)	9 (CEP 9)	TBD
+            After Effects	AEFT	    16 (CEP 9)	17 (CEP 9)	17.1.4 (CEP 10)
+            Animate	        FLPR	    19 (CEP 9)	20 (CEP 9)	21.0 (CEP 10)
+            Audition	    AUDT	    12 (CEP 9)	13 (CEP 9)	13.0.10 (CEP 10)
+            Dreamweaver	    DRWV	    19 (CEP 9)	20 (CEP 9)	21.0 (CEP 10)
+            Bridge      	KBRG	    9 (CEP 9)	10 (CEP 9)	11.0 (CEP 10)
+            Rush	        RUSH	    1 (CEP 9)	1.2.1 (CEP 9)dalone="no"?>
+<ExtensionManifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ExtensionBundleId="CEPTemplate.helloWorld" ExtensionBundleVersion="1.0" Version="6.0"> <!-- MAJOR-VERSION-UPDATE-MARKER -->
+    <ExtensionList>
+        <Extension Id="CEPTemplate.helloWorld.panel" Version="1.0"/> <!-- 设置扩展 ID-->
+    </ExtensionList>
+
+    <ExecutionEnvironment>
+        <HostList> <!-- 设置扩展能在 11.0 版本之后 PhotoShop 中运行-->
+            <!-- <Host Name="PHXS" Version="[21.0,99.9]"/> -->
+            <!-- <Host Name="PHSP" Version="[21.0,99.9]"/> -->
+            <Host Name="PPRO" Version="[14.0,99.9]"/>
+            <Host Name="AEFT" Version="[17.0,99.9]"/>
+            <!-- <Host Name="AEFT" Version="[8.0,99.9]"/> -->
+            <!-- 
+             -->
+        </HostList>
+
+        <LocaleList>
+            <Locale Code="All"/>
+        </LocaleList>
+
+        <RequiredRuntimeList>
+            <RequiredRuntime Name="CSXS" Version="9.0"/>
+        </RequiredRuntimeList>
+    </ExecutionEnvironment>
+
+    <DispatchInfoList>
+        <Extension Id="CEPTemplate.helloWorld.panel"> <!-- 为 new_panel 设置属性-->
+            <DispatchInfo>
+                <Resources>
+                    <MainPath>./client/index.html</MainPath> <!-- 指定起始载入的网页--> <!--从扩展包的根目录查找-->
+                    <ScriptPath>./host/jsx/main.jsx</ScriptPath> <!-- 指定用到的 JSX 文件--> <!--从扩展包的根目录查找-->
+                </Resources>
+
+                <Lifecycle>
+                    <AutoVisible>true</AutoVisible> <!-- 设置扩展面板为可视-->
+                </Lifecycle>
+
+                <UI>
+                    <Type>Panel</Type> <!-- 设置扩展显示为面板模式-->
+                    <Menu>CEP Template - Hello World!</Menu> <!-- 设置扩展标题-->
+                    <Geometry>
+                        <Size>  <!-- 设置扩展面板尺寸-->
+                            <Height>300</Height>
+                            <Width>340</Width>
+                        </Size>             
+                        <MaxSize>
+                            <Height>900</Height>
+                            <Width>900</Width>
+                        </MaxSize>
+                        <MinSize>
+                            <Height>300</Height>
+                            <Width>300</Width>
+                        </MinSize>
+                    </Geometry>
+                    <Icons>  <!-- 设置扩展面板图标-->
+                        <Icon Type="Normal">./client/img/light.png</Icon>
+                        <Icon Type="DarkNormal">./client/img/dark.png</Icon>
+                    </Icons>
+                </UI>
+            </DispatchInfo>
+        </Extension>
+    </DispatchInfoList>
+</ExtensionManifest>
